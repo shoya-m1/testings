@@ -22,7 +22,7 @@ app.get("/episode/:slug", async (req, res) => {
     const html = response.data;
     const $ = cheerio.load(html);
 
-    res.send(cheerio.load(html));
+    res.send(html);
   } catch (error) {
     console.error("❌ Proxy Error:", error.message);
     res.status(500).json({

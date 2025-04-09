@@ -20,14 +20,14 @@ app.get("/episode/:slug", async (req, res) => {
     const $ = cheerio.load(html);
 
     const title = $("h1").text().trim();
-    const slug = $('.flir a[href*="/anime/"]').attr("href")?.split("/anime/")[1]?.replace(/\/$/, "");
+    const slugId = $('.flir a[href*="/anime/"]').attr("href")?.split("/anime/")[1]?.replace(/\/$/, "");
 
     const urlId = episodeId;
 
     res.json({
       ok: true,
       title,
-      slug,
+      slugId,
       urlId,
     });
   } catch (error) {

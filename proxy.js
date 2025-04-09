@@ -22,7 +22,7 @@ app.get("/episode/:slug", async (req, res) => {
     const title = $("h1").text().trim();
     const slugId = $('.flir a[href*="/anime/"]').attr("href")?.split("/anime/")[1]?.replace(/\/$/, "");
 
-    const urlId = episodeId;
+    const urlId = slug;
 
     res.json({
       ok: true,
